@@ -1,4 +1,4 @@
-# Laravel 8 Razorpay 具象狀態傳輸應用程式介面用戶端
+# Laravel 9 Razorpay 具象狀態傳輸應用程式介面用戶端
 
 引入 razorpay 的 razorpay 套件來擴增 RazorPay 付款服務，可處理多種付款模式，例如信用卡、簽帳金融卡、UPI 以及特定行動錢包，協助順利拓展線上業務。
 
