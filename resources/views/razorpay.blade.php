@@ -6,7 +6,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>{{ config('app.name') }}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css" integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div id="app">
@@ -42,12 +42,12 @@
                                             src="https://checkout.razorpay.com/v1/checkout.js"
                                             data-key="{{ env('RAZORPAY_KEY') }}"
                                             data-amount=1500
-                                            data-buttontext="定價：450元"
+                                            data-buttontext="{{ __('list price:US$:list_price', ['list_price' => 15]) }}"
                                             data-name="{{ config('app.name') }}"
                                             data-currency="USD"
                                             data-description="Rozerpay"
                                             data-image="{{ url('images/kamen-rider-black.jpg') }}"
-                                            data-prefill.email="電子郵件"
+                                            data-prefill.email="{{ __('Email') }}"
                                             data-theme.color="#00D861"
                                         ></script>
                                     </form>
@@ -58,6 +58,6 @@
                 </div>
             </main>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     </body>
 </html>
