@@ -1,4 +1,8 @@
 {
     "Email": "電子郵件",
-    "list price:US$:list_price": "定價：$:list_price 美元"
+    "Error!": "錯誤！",
+    "list price: US$:list_price": "定價：$:list_price 美元",
+    "Payment Failed": "付款失敗",
+    "Payment successfully": "付款成功",
+    "Success!": "成功！"
 }

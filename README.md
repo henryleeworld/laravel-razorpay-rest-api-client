@@ -1,4 +1,4 @@
-# Laravel 10 Razorpay 具象狀態傳輸應用程式介面用戶端
+# Laravel 11 Razorpay 具象狀態傳輸應用程式介面用戶端
 
 引入 razorpay 的 razorpay 套件來擴增 RazorPay 付款服務，可處理多種付款模式，例如信用卡、簽帳金融卡、UPI 以及特定行動錢包，協助順利拓展線上業務。
 
@@ -22,5 +22,5 @@ $ php artisan key:generate
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/ccXHLZC.gif)
+![](https://i.imgur.com/A0YBOUw.gif)
 > 可以透過信用卡、金融卡、網絡銀行和電子錢包來進行線上收款

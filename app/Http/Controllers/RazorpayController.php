@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Integrations\Razorpay\RazorpayConnector;
 use Exception;
 use Illuminate\Http\Request;
 use Razorpay\Api\Api;
@@ -9,13 +10,23 @@ use Session;
 
 class RazorpayController extends Controller
 {
+    private $razorpayConnector;
+
+    /**
+     * Create a new controller instance.
+     */
+    public function __construct(RazorpayConnector $razorpayConnector)
+    {
+        $this->razorpayConnector = $razorpayConnector;
+    }
+
     /**
      * Write code on Method
      *
      * @return response()
      */
     public function index()
-    {        
+    {
         return view('razorpay');
     }
   
@@ -27,18 +38,14 @@ class RazorpayController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
-        $payment = $api->payment->fetch($input['razorpay_payment_id']);
-        if(count($input)  && !empty($input['razorpay_payment_id'])) {
-            try {
-                $response = $api->payment->fetch($input['razorpay_payment_id'])->capture(array('amount'=>$payment['amount']));
-            } catch (Exception $e) {
-                return  $e->getMessage();
-                Session::put('error',$e->getMessage());
-                return redirect()->back();
-            }
+        try {
+            $response = $this->razorpayConnector->fetch($input);
+        } catch (Exception $e) {
+            return  $e->getMessage();
+            Session::put('error',$e->getMessage());
+            return redirect()->back();
         }
-        Session::put('success', 'Payment successful');
+        !$response ? Session::put('error', __('Payment Failed')) : Session::put('success', __('Payment successfully'));
         return redirect()->back();
     }
 }
