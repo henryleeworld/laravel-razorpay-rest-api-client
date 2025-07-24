@@ -21,9 +21,7 @@ class RazorpayController extends Controller
     }
 
     /**
-     * Write code on Method
-     *
-     * @return response()
+     * Display a listing of the resource.
      */
     public function index()
     {
@@ -31,9 +29,7 @@ class RazorpayController extends Controller
     }
   
     /**
-     * Write code on Method
-     *
-     * @return response()
+     * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
