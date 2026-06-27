@@ -5,19 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Integrations\Razorpay\RazorpayConnector;
 use Exception;
 use Illuminate\Http\Request;
-use Razorpay\Api\Api;
 use Session;
 
 class RazorpayController extends Controller
 {
-    private $razorpayConnector;
-
     /**
      * Create a new controller instance.
      */
-    public function __construct(RazorpayConnector $razorpayConnector)
+    public function __construct(private RazorpayConnector $razorpayConnector)
     {
-        $this->razorpayConnector = $razorpayConnector;
     }
 
     /**
